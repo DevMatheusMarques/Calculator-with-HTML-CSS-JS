@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="author" content="Matheus Marques">
+    <meta name="description" content="Design de Calculadora Web">
+    <meta name="keywords" content="html, css, código, TI, técnologia, calculadora">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+
+	<title>Calculadora</title>
+	
+	<style>
+		body{
+			margin-top: 10%;
+		}
+		#container {
+			width: 300px;
+			margin: 0 auto;
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 5px;
+		}
+
+		input[type="button"] {
+			width: 60px;
+			height: 60px;
+			font-size: 24px;
+			margin: 5px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		input[type="text"] {
+			width: 90%;
+			height: 60px;
+			font-size: 24px;
+			margin-bottom: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<input type="text" id="resultado" placeholder="0">
+		<input type="button" value="7" onclick="adicionarNumero('7')">
+		<input type="button" value="8" onclick="adicionarNumero('8')">
+		<input type="button" value="9" onclick="adicionarNumero('9')">
+		<input type="button" value="+" onclick="adicionarOperador('+')">
+		<input type="button" value="4" onclick="adicionarNumero('4')">
+		<input type="button" value="5" onclick="adicionarNumero('5')">
+		<input type="button" value="6" onclick="adicionarNumero('6')">
+		<input type="button" value="-" onclick="adicionarOperador('-')">
+		<input type="button" value="1" onclick="adicionarNumero('1')">
+		<input type="button" value="2" onclick="adicionarNumero('2')">
+		<input type="button" value="3" onclick="adicionarNumero('3')">
+		<input type="button" value="*" onclick="adicionarOperador('*')">
+		<input type="button" value="0" onclick="adicionarNumero('0')">
+		<input type="button" value="C" onclick="limpar()">
+		<input type="button" value="=" onclick="calcular()">
+		<input type="button" value="/" onclick="adicionarOperador('/')">
+	</div>
+	<script>
+		var resultado = document.getElementById("resultado");
+
+		function adicionarNumero(numero) {
+			resultado.value += numero;
+		}
+
+		function adicionarOperador(operador) {
+			resultado.value += operador;
+		}
+
+		function limpar() {
+			resultado.value = "";
+		}
+
+		function calcular() {
+			resultado.value = eval(resultado.value);
+		}
+	</script>
+</body>
+</html>
